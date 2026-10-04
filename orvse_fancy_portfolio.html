@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="ORVSE_ — Cybersecurity & Programming Portfolio">
+<title>ORVSE_ // Cybersecurity</title>
+<style>
+:root{--bg:#030303;--panel:#0a0a0c;--panel2:#101014;--red:#ff1b1b;--red2:#8e0000;--white:#f5f5f5;--muted:#8c8c94;--line:#25252a;--green:#61ff8c}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;background:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 4px)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 70% 0,rgba(255,0,0,.14),transparent 30%),radial-gradient(circle at 0 70%,rgba(130,0,0,.08),transparent 28%);z-index:-1}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;z-index:10;top:0;left:0;right:0;padding:17px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(3,3,3,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.logo{font:bold 20px monospace;letter-spacing:4px}.logo b{color:var(--red)}
+nav .links{display:flex;gap:24px;font:11px monospace;color:#aaa;letter-spacing:1px}
+nav .links a:hover{color:var(--red)}
+section{max-width:1200px;margin:auto;padding:110px 6%}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:130px}
+.hero .glow{position:absolute;width:420px;height:420px;border:1px solid rgba(255,0,0,.13);border-radius:50%;right:-150px;top:25%;box-shadow:0 0 90px rgba(255,0,0,.09),inset 0 0 80px rgba(255,0,0,.04)}
+.kicker{font:12px monospace;color:var(--red);letter-spacing:4px;margin-bottom:18px}
+h1{font:bold clamp(64px,12vw,150px)/.8 monospace;letter-spacing:-8px}
+h1 span{color:var(--red);text-shadow:0 0 35px rgba(255,0,0,.3)}
+.hero h2{margin-top:25px;font:16px monospace;color:#aaa;max-width:700px}
+.cursor{display:inline-block;width:8px;height:17px;background:var(--red);animation:blink .8s infinite;vertical-align:-2px}
+@keyframes blink{50%{opacity:0}}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{padding:13px 18px;border:1px solid var(--red);font:12px monospace;transition:.3s}
+.btn:hover{background:var(--red);box-shadow:0 0 35px rgba(255,0,0,.25);transform:translateY(-3px)}
+.btn.alt{border-color:#333;color:#bbb}.btn.alt:hover{border-color:#777;background:#111}
+.metrics{display:flex;gap:35px;margin-top:55px;flex-wrap:wrap}
+.metric strong{display:block;font:25px monospace}.metric small{color:#666;font:10px monospace}
+.section-label{font:11px monospace;color:var(--red);letter-spacing:3px;margin-bottom:10px}
+h3.big{font-size:38px;margin-bottom:32px}h3.big span{color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:linear-gradient(145deg,#111114,#080809);border:1px solid var(--line);padding:25px;position:relative;overflow:hidden;transition:.3s;min-height:205px}
+.card:before{content:"";position:absolute;left:0;top:0;width:2px;height:100%;background:var(--red);transform:scaleY(0);transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#491616}.card:hover:before{transform:scaleY(1)}
+.icon{font:25px monospace;color:var(--red);margin-bottom:18px}
+.card h4{font-size:18px;margin-bottom:9px}.card p{color:#8c8c91;font-size:13px}
+.card small{display:block;color:#555;margin-top:17px;font:10px monospace}
+.skills{display:flex;flex-wrap:wrap;gap:9px}
+.skill{padding:10px 13px;border:1px solid #29292e;background:#0c0c0e;color:#c9c9cc;font:12px monospace;transition:.25s}
+.skill:hover{border-color:var(--red);color:#fff;box-shadow:0 0 15px rgba(255,0,0,.1)}
+.skill:before{content:"./";color:var(--red)}
+.timeline{border-left:1px solid #3a1717;padding-left:25px;display:grid;gap:24px}
+.titem{position:relative}.titem:before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);left:-30px;top:7px;box-shadow:0 0 15px var(--red)}
+.titem span{font:10px monospace;color:var(--red)}.titem h4{margin:6px 0}.titem p{color:#85858a;font-size:13px}
+.terminal{border:1px solid #29292d;background:#070708;border-radius:10px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.5)}
+.termbar{padding:11px 15px;border-bottom:1px solid #222;background:#0d0d0f;font:11px monospace;color:#666}.dots{color:var(--red);letter-spacing:5px}
+.terminal pre{padding:24px;font:13px/2 monospace;color:#aaa;white-space:pre-wrap}.r{color:var(--red)}.g{color:var(--green)}.w{color:white}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.stat{padding:22px;background:#0b0b0d;border:1px solid var(--line);text-align:center}.stat b{display:block;font:24px monospace}.stat span{color:#666;font:10px monospace}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact a{padding:23px;background:#0b0b0d;border:1px solid var(--line);font:13px monospace;transition:.25s}.contact a:hover{border-color:var(--red);transform:translateY(-3px)}
+footer{padding:35px 6%;border-top:1px solid var(--line);text-align:center;color:#555;font:10px monospace}
+.reveal{opacity:0;transform:translateY(25px);animation:up .8s forwards}.d2{animation-delay:.2s}.d3{animation-delay:.4s}
+@keyframes up{to{opacity:1;transform:none}}
+@media(max-width:800px){nav .links{display:none}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}section{padding:85px 6%}h1{letter-spacing:-5px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#">ORVSE<b>_</b></a>
+  <div class="links">
+    <a href="#about">ABOUT</a><a href="#expertise">EXPERTISE</a><a href="#stack">STACK</a><a href="#work">WORK</a><a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="glow"></div>
+  <div>
+    <div class="kicker reveal">CYBERSECURITY // PROGRAMMING // DIGITAL SECURITY</div>
+    <h1 class="reveal d2">ORV<span>SE</span>_</h1>
+    <h2 class="reveal d3">Building. Breaking. Understanding. Securing.<br><span class="g">$</span> <span id="typing">whoami</span><span class="cursor"></span></h2>
+    <div class="buttons reveal d3">
+      <a class="btn" href="#expertise">EXPLORE →</a>
+      <a class="btn alt" href="https://github.com/itsxvse" target="_blank">GITHUB ↗</a>
+    </div>
+    <div class="metrics reveal d3">
+      <div class="metric"><strong>0x00</strong><small>LIMITS</small></div>
+      <div class="metric"><strong>24/7</strong><small>CURIOSITY</small></div>
+      <div class="metric"><strong>∞</strong><small>LEARNING</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label">01 // PROFILE</div><h3 class="big">WHO <span>AM I?</span></h3>
+  <div class="card">
+    <h4>Digital Security Enthusiast</h4>
+    <p>I explore cybersecurity, ethical security testing, programming and web technologies. My focus is understanding how systems work, identifying weaknesses responsibly, and creating useful tools and interfaces.</p>
+    <small>STATUS :: ALWAYS_LEARNING</small>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="section-label">02 // EXPERTISE</div><h3 class="big">AREAS OF <span>EXPERIENCE</span></h3>
+  <div class="grid">
+    <div class="card"><div class="icon">01</div><h4>Ethical Hacking</h4><p>Security concepts, reconnaissance, vulnerability awareness, penetration-testing methodology and defensive thinking in authorized environments.</p><small>RESEARCH / PENTESTING / DEFENSE</small></div>
+    <div class="card"><div class="icon">02</div><h4>Web Security</h4><p>Understanding authentication, sessions, input validation, common web vulnerabilities and secure development practices.</p><small>HTTP / WEB APPS / SECURITY</small></div>
+    <div class="card"><div class="icon">03</div><h4>Programming</h4><p>Building scripts, utilities, automation ideas and small applications while improving logic and problem-solving.</p><small>PYTHON / JS / HTML / CSS</small></div>
+    <div class="card"><div class="icon">04</div><h4>Linux & Systems</h4><p>Command-line workflows, permissions, processes, filesystems, system concepts and security-oriented environments.</p><small>LINUX / CLI / SYSTEMS</small></div>
+    <div class="card"><div class="icon">05</div><h4>Networking</h4><p>Core networking concepts including IP, DNS, HTTP, ports, protocols and how traffic moves between systems.</p><small>TCP/IP / DNS / HTTP</small></div>
+    <div class="card"><div class="icon">06</div><h4>OSINT</h4><p>Open-source intelligence concepts, information discovery, digital footprints and responsible research techniques.</p><small>RESEARCH / ANALYSIS</small></div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="section-label">03 // TOOLKIT</div><h3 class="big">TECH <span>STACK</span></h3>
+  <div class="skills">
+    <span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">Python</span>
+    <span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Linux</span><span class="skill">Bash</span>
+    <span class="skill">HTTP</span><span class="skill">TCP/IP</span><span class="skill">DNS</span><span class="skill">Web Security</span>
+    <span class="skill">OSINT</span><span class="skill">Automation</span><span class="skill">Problem Solving</span><span class="skill">CLI</span>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-label">04 // PROJECT MINDSET</div><h3 class="big">HOW I <span>WORK</span></h3>
+  <div class="timeline">
+    <div class="titem"><span>01 / RECON</span><h4>Understand the target</h4><p>Map the problem, technologies, requirements and attack surface before touching anything.</p></div>
+    <div class="titem"><span>02 / BUILD</span><h4>Create the solution</h4><p>Turn ideas into clean code, useful tools and responsive interfaces.</p></div>
+    <div class="titem"><span>03 / TEST</span><h4>Break it responsibly</h4><p>Test authorized systems for weaknesses and verify that security controls behave as expected.</p></div>
+    <div class="titem"><span>04 / SECURE</span><h4>Improve & document</h4><p>Fix weaknesses, reduce risk and document what was learned for the next iteration.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">05 // TERMINAL</div><h3 class="big">SYSTEM <span>IDENTITY</span></h3>
+  <div class="terminal">
+    <div class="termbar"><span class="dots">● ● ●</span> &nbsp; orvse@localhost:~</div>
+    <pre><span class="r">$</span> whoami
+<span class="w">ORVSE_</span>
+
+<span class="r">$</span> cat profile.json
+{
+  "focus": <span class="g">"cybersecurity"</span>,
+  "skills": [<span class="g">"security"</span>, <span class="g">"programming"</span>, <span class="g">"web"</span>],
+  "mindset": <span class="g">"learn // build // secure"</span>,
+  "mode": <span class="g">"low_profile"</span>,
+  "status": <span class="g">"ONLINE"</span>
+}
+
+<span class="r">$</span> _</pre>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>01</b><span>IDENTITY</span></div><div class="stat"><b>0x0</b><span>NOISE</span></div><div class="stat"><b>∞</b><span>PROJECTS</span></div><div class="stat"><b>ON</b><span>STATUS</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">06 // CONNECT</div><h3 class="big">FIND <span>ORVSE_</span></h3>
+  <div class="contact">
+    <a href="https://github.com/itsxvse" target="_blank">GITHUB ↗<br><small>github.com/itsxvse</small></a>
+    <a href="https://www.instagram.com/0rvse_" target="_blank">INSTAGRAM ↗<br><small>@0rvse_</small></a>
+  </div>
+</section>
+
+<footer>ORVSE_ // BUILT WITH HTML + CSS // © 2026 // LOW PROFILE / HIGH INTENT</footer>
+<script>
+const words=["whoami","security.research()","build();","learn();","secure();"];
+let i=0;
+setInterval(()=>{i=(i+1)%words.length;document.getElementById("typing").textContent=words[i]},1800);
+</script>
+</body>
+</html>
